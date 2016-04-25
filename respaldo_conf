@@ -1,0 +1,11 @@
+#!/bin/bash
+# se forma el nombre del archivo
+date=`date +'%B-%e-%Y-%H:%M'`
+archivo=Respaldo-$date.tar.gz
+#destino=/media/hektor/Archivos
+destinodd=/media/hektor/KIUBIX-DD/Respaldos/Hektor
+
+# copia del archivo
+#mkdir $destino/respaldos
+tar -zcvf $destinodd/respaldos/$archivo $HOME/.atom $HOME/.icons $HOME/.themes 
+#zip $destinodd/respaldos/$archivo -X excluir $HOME* 

@@ -1,0 +1,86 @@
+#!/bin/bash
+# -*- ENCODING: UTF-8 -*-
+
+apt-get remove --purge libreoffice* -y
+apt-get clean -y
+apt-get autoremove -y
+
+
+apt-get update -y
+apt-get upgrade -y
+
+
+
+apt-get install git -y
+apt-get install fish -y
+apt-get install compizconfig-settings-manager compiz-plugins -y
+apt-get install inkscape -y
+apt-get install gimp -y
+apt-get install ruby -y
+apt-get install gdebi -y
+apt-get install unrar -y
+apt-get install unzip -y
+apt-get install lftp -y
+apt-get install gcp -y
+apt-get install gpick -y
+
+apt-add-repository ppa:jtaylor/keepass -y
+apt-get install keepass2 -y
+
+add-apt-repository ppa:noobslab/icons -y
+apt-get update -y
+apt-get install faenza-icon-theme -y
+
+sudo add-apt-repository ppa:ravefinity-project/ppa -y
+sudo apt-get update -y
+sudo apt-get install vibrancy-colors -y
+
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886
+echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
+apt-get update -y
+apt-get install spotify-client -y
+
+
+#add-apt-repository ppa:freyja-dev/unity-tweak-tool-daily -y
+#apt-get update -y
+#apt-get install unity-tweak-tool -y
+
+apt-get install autoconf -y
+apt-get install automake -y
+apt-get install pkg-config -y
+apt-get install libgtk-3-dev -y
+git clone https://github.com/horst3180/arc-theme --depth 1 
+cd arc-theme/ 
+./autogen.sh --prefix=/usr
+sudo make install 
+
+chmod -x $HOME/install/prepros_install.sh
+chmod -x $HOME/install/lampp_install.sh
+sleep 1s
+bash $HOME/install/prepros_install.sh
+sleep 1s
+bash $HOME/install/lampp_install.sh
+sleep 1s
+gsettings set com.canonical.Unity form-factor 'Netbook'
+
+#mkdir $HOME/install/tmp/
+#sleep 1s
+
+#wget -r -c -nd -i listado -P $HOME/install/tmp/
+#mv $HOME/install/tmp/deb $HOME/install/tmp/atom-amd64.deb
+
+#gdebi $HOME/install/tmp/atom-amd64.deb
+#gdebi $HOME/install/tmp/opera-stable_36.0.2130.32_amd64.deb 
+#gdebi $HOME/install/tmp/google-chrome-stable_current_amd64.deb
+#gdebi $HOME/install/tmp/gitkraken-amd64.deb
+#gdebi $HOME/install/tmp/wps-office_10.1.0.5503~a20p2_i386.deb
+#gdebi $HOME/install/tmp/google-play-music-desktop-player_3.0.1_amd64.deb
+
+#google-play-music-desktop-player --disable-gpu
+
+#sudo dpkg -i $HOME/install/tmp/*.deb -y
+
+
+
+
+ 

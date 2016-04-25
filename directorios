@@ -1,0 +1,14 @@
+#!/bin/bash
+declare -a carpetas=()
+find . -maxdepth 1 -type d | grep -v "^\.$" > dirs
+while read elemento
+do
+	carpetas=("${carpetas[@]}" "$elemento");
+done < ./dirs
+echo -e "Elementos del arreglo : "
+for i in `seq 0 1 $[ ${#carpetas[@]} - 1 ]`
+do
+	echo -e "${carpetas[$i]}"
+done
+
+echo "X ${carpetas[1]}"
