@@ -1,11 +1,10 @@
 #!/bin/bash
 # se forma el nombre del archivo
-date=`date +'%B-%e-%Y-%H:%M'`
-archivo=Respaldo-$date.tar.gz
-#destino=/media/hektor/Archivos
-destinodd=/media/hektor/KIUBIX-DD/Respaldos/Hektor
+fecha=$(date +'%d-%B-%Y-%H-%M')
+archivo=Respaldo-$fecha.tar.gz
+destino=/media/hektor/4464D7A01553B44E/rspld
 
 # copia del archivo
-#mkdir $destino/respaldos
-tar -zcvf $destinodd/respaldos/$archivo -X excluir $HOME* 
-#zip $destinodd/respaldos/$archivo -X excluir $HOME* 
+echo "$archivo"
+tar -zcvf $destino/$archivo -X excluir $HOME
+tar -zcvf $destino/lampp/$archivo /opt/lampp/htdocs/www
