@@ -2,9 +2,11 @@
 # se forma el nombre del archivo
 fecha=$(date +'%d-%B-%Y-%H-%M')
 archivo=Respaldo-$fecha.tar.gz
+archivoconf=Respaldo_conf-$fecha.tar.gz
 destino=/media/hektor/4464D7A01553B44E/rspld
 
 # copia del archivo
 echo "$archivo"
-tar -zcvf $destino/$archivo -X excluir $HOME
-tar -zcvf $destino/lampp/$archivo /opt/lampp/htdocs/www
+#tar -zcvf $destino/$archivo -X excluir $HOME
+#tar -zcvf $destino/lampp/$archivo /opt/lampp/htdocs/www
+tar -zcvf $destino/$archivoconf $HOME/.atom $HOME/.icons $HOME/.themes 
