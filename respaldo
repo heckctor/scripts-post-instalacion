@@ -7,6 +7,6 @@ destino=/media/hektor/4464D7A01553B44E/rspld
 
 # copia del archivo
 echo "$archivo"
-#tar -zcvf $destino/$archivo -X excluir $HOME
-#tar -zcvf $destino/lampp/$archivo /opt/lampp/htdocs/www
+tar -zcvf $destino/$archivo -X excluir $HOME
+tar -zcvf $destino/lampp/$archivo /opt/lampp/htdocs/www
 tar -zcvf $destino/$archivoconf $HOME/.atom $HOME/.icons $HOME/.themes 
